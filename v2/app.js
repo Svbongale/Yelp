@@ -10,7 +10,7 @@ seedDB();
 // Body parser
 var bodyparser= require("body-parser");
 app.use(bodyparser.urlencoded({extended:true}));
-
+app.use(express.static(__dirname + "/public"));
 // Connect mongoose to express
 var mongoose=require("mongoose");
 
