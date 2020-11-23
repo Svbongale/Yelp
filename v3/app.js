@@ -16,7 +16,7 @@ var campgroundRoutes        = require("./routes/campgrounds"),
     indexRoutes             = require("./routes/index");
 
 // mongoose.connect("mongodb://localhost:27017/yelp_camp_final", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
-mongoose.connect("mongodb+srv://vinay:%2ASANJANArn12@yelp-7egas.azure.mongodb.net/test", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect("mongodb://localhost/Yelpcamp_finalRoutes", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -50,7 +50,7 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-var port = process.env.PORT || 12345;
-app.listen(port, function(){
-    console.log("The Yelpcamp server is listening...");
+app.listen(3000, function() { 
+    console.log("This is the YelpcampFinal app");
+    console.log('Server listening on port 3000'); 
 });
