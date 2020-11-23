@@ -1,15 +1,36 @@
-<%- include("partials/header") %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script> -->
+    </head>
+    <body>
+        <div class="container">
+            <% if(error && error.length > 0){ %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= success %>
+                </div>
+                <% } %>
+        </div>
 
-<div class="container">
-<div class="jumbotron">
-<h1 class="display-4">
-	Welcome to Yelp camp!
-</h1>
-</div>
-</div>
+        <div id="landing-header">
+            <h1>Welcome to YelpCamp!</h1>
+            <a href="/campgrounds" class="btn btn-large btn-success">View all campGrounds</a>
+        </div>
 
-
-
-<div class="container"><a href="/campgrounds"><button class="btn btn-primary">All Camp Grounds</button></a></div>
-
-<%- include("partials/footer") %>
+        <ul class="slideshow">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </body>
+</html>
